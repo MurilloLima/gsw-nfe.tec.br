@@ -1,0 +1,10 @@
+Hostgator
+Login: alamoarmasdefogo@gmail.com
+Senha: GunShop#21
+Domínio: www.gunshopweb.com.br
+
+FTP
+Nome de usuário do FTP: emissor@gunshopweb.com.br
+Servidor FTP: ftp.gunshopweb.com.br
+FTP & porta FTPS explícita:  21
+pass: wcomRvl~$Z^K
