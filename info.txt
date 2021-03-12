@@ -1,7 +1,7 @@
 Hostgator
 Login: alamoarmasdefogo@gmail.com
 Senha: GunShop#21
-Domínio: www.gunshopweb.com.br
+
 
 FTP
 Nome de usuário do FTP: emissor@gunshopweb.com.br

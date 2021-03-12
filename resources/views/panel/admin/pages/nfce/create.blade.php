@@ -1,5 +1,5 @@
-@extends('panel.admin.layouts.app', ['activePage' => 'admin.index'])
-@section('title', 'Dashboard')
+@extends('panel.admin.layouts.app', ['activePage' => 'admin.nfce'])
+@section('title', 'Emitir NFc-e')
 @section('content')
 <div class="content-wrapper" style="min-height: 255px;">
     <!-- Content Header (Page header) -->
@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
+                        <li class="breadcrumb-item active">Emitir NFc-e</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -23,11 +23,22 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <!-- /.row -->
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <img src="{{ asset('logo-black.png') }}" width="440" alt="">
-                    <h1><strong>GSW - Emissor de NFc-e</strong></h1>
+                <div class="col-md-12">
+                    @include('panel.admin.includes.alerts')
+                    <div class="card card-primary">
+                        <div class="card-header border-0">
+                            <div class="d-flex justify-content-between">
+                                <h3 class="card-title">Emitir NFc-e</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @include('panel.admin.pages.nfce._form.form')
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Emitir</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
