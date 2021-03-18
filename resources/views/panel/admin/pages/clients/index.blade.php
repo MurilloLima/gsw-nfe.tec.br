@@ -1,5 +1,5 @@
-@extends('panel.admin.layouts.app', ['activePage' => 'admin.products'])
-@section('title', 'Produtos')
+@extends('panel.admin.layouts.app', ['activePage' => 'admin.clients'])
+@section('title', 'Clientes')
 @section('content')
 <div class="content-wrapper" style="min-height: 255px;">
     <!-- Content Header (Page header) -->
@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Produtos</li>
+                        <li class="breadcrumb-item active">Clientes</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,7 +28,7 @@
                     @include('panel.admin.includes.alerts')
                     <div class="row">
                         <div class="col-md-12 text-right" style="margin-bottom: 10px;">
-                            <a href="{{ route('admin.product.create') }}" class="btn btn-primary">
+                            <a href="{{ route('admin.client.create') }}" class="btn btn-primary">
                                 Adicionar
                             </a>
                         </div>
@@ -36,7 +36,7 @@
                     <div class="card card-primary">
                         <div class="card-header border-0">
                             <div class="d-flex justify-content-between">
-                                <h3 class="card-title">Produtos</h3>
+                                <h3 class="card-title">Clientes</h3>
                             </div>
                         </div>
                         <div class="card-body">
@@ -45,10 +45,10 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Produto</th>
-                                            <th>Qtd</th>
-                                            <th>Valor</th>
-                                            <th>Unid. Medida</th>
+                                            <th>Nome</th>
+                                            <th>CPF/CNPJ</th>
+                                            <th>Cidade/UF</th>
+                                            <th></th>
                                             <th>#</th>
                                         </tr>
                                     </thead>
@@ -57,15 +57,15 @@
                                         <tr>
                                             <td><a href="">{{$item->id}}</a></td>
                                             <td>{{$item->name}}</td>
-                                            <td>{{$item->qtd}}</td>
-                                            <td>{{number_format($item->valor, 2, ',','.')}}</td>
+                                            <td>{{$item->cpf}}{{$item->cnpj}}</td>
+                                            <td>{{$item->cidade}}/{{$item->uf}}</td>
                                             <td>{{$item->uni_medida}}</td>
                                             <td>
-                                                <a href="{{ route('admin.product.edit', ['id'=>$item->id]) }}"
+                                                <a href="{{ route('admin.client.edit', ['id'=>$item->id]) }}"
                                                     class="btn btn-xs btn-default" title="Editar">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-                                                <a href="{{ route('admin.product.delete', ['id'=>$item->id]) }}"
+                                                <a href="{{ route('admin.client.delete', ['id'=>$item->id]) }}"
                                                     class="btn btn-xs btn-default" title="Deletar">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </a>

@@ -24,7 +24,18 @@ class ClientRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'andress' => 'required',
+            'cidade' => 'required',
+            'uf' => 'required',
         ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Informe o nome do cliente.',
+            'andress.required' => 'Informe o endereço.',
+        ];
+        # code...
     }
 }
