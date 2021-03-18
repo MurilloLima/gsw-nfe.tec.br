@@ -4,7 +4,7 @@ Senha: GunShop#21
 
 
 FTP
-Nome de usuário do FTP: emissor@gunshopweb.com.br
-Servidor FTP: ftp.gunshopweb.com.br
+User: nfce@gsw.tec.br
+Host: ftp.gsw.tec.br
 FTP & porta FTPS explícita:  21
-pass: wcomRvl~$Z^K
+pass: BDAznYV2j9@w
