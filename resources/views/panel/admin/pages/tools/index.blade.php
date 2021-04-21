@@ -33,12 +33,16 @@
                                 <h3 class="card-title">Configurações</h3>
                             </div>
                         </div>
-                        <div class="card-body">
-                            @include('panel.admin.pages.tools._form.form')
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Gravar</button>
-                        </div>
+                        <form action="{{ route('admin.tools.update') }}" method="post">
+                            @method('post')
+                            @csrf
+                            <div class="card-body">
+                                @include('panel.admin.pages.tools._form.form')
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Gravar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

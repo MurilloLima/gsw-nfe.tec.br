@@ -2,9 +2,19 @@ Hostgator
 Login: alamoarmasdefogo@gmail.com
 Senha: GunShop#21
 
+===========================================
+
+hostinger
+login: alamoarmasdefogo@gmail.com
+pass: GunShop21
 
 FTP
-User: nfce@gsw.tec.br
-Host: ftp.gsw.tec.br
-FTP & porta FTPS explícita:  21
-pass: BDAznYV2j9@w
+user: u962765307.user 
+host: ftp.gswbrasil.com 
+pass: o$XH?rn1
+
+MYSQL
+host: https://auth-db485.hostinger.com.br/?_ga=2.147878455.1639526805.1618874053-500961604.1618874053
+bd:   u962765307_bd 
+user: u962765307_user 
+pass: Yw24jWil]
