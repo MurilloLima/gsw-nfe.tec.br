@@ -75,7 +75,7 @@
                         class="nav-link {{ $activePage == 'admin.nfce' ? ' active' : '' }}">
                         <i class="nav-icon fas fa-file-alt"></i>
                         <p>
-                            NFc-e
+                            NF-e
                         </p>
                     </a>
                 </li>

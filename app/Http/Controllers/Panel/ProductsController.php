@@ -44,9 +44,11 @@ class ProductsController extends Controller
         $valor = str_replace($source, $replace, $request->get('valor'));
         Product::create([
             'name' => $request->get('name'),
-            'qtd' => $request->get('qtd'),
             'uni_medida' => $request->get('uni_medida'),
-            'valor' => $valor
+            'valor' => $valor,
+            'cfop' => $request->get('cfop'),
+            'ncm' => $request->get('ncm'),
+            'descryption' => $request->get('descryption')
         ]);
         return redirect()->back()->with('success', 'Cadastrado com sucesso.');
     }

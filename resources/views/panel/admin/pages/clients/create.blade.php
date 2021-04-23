@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <!-- /.row -->
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-10">
                     @include('panel.admin.includes.alerts')
                     <div class="card card-primary">
                         <div class="card-header border-0">

@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
         <label>{{ __('Produto') }}</label>
         <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
             <input class="form-control{{ $errors->has('name') ? ' has-danger' : '' }}" name="name" type="text"
@@ -9,19 +9,41 @@
             @endif
         </div>
     </div>
-    <div class="col-md-3">
-        <label>{{ __('Quantidade') }}</label>
-        <div class="form-group{{ $errors->has('qtd') ? ' has-danger' : '' }}">
-            <input class="form-control {{ $errors->has('qtd') ? ' has-danger' : '' }}" name="qtd" type="text"
-                value="{{$data->qtd ?? old('qtd')}}" required />
-            @if ($errors->has('qtd'))
-            <span id="email-error" class="error text-danger">{{ $errors->first('qtd') }}</span>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <label>{{ __('Descrição') }}</label>
+        <div class="form-group{{ $errors->has('descryption') ? ' has-danger' : '' }}">
+            <textarea name="descryption" class="form-control{{ $errors->has('descryption') ? ' has-danger' : '' }}"
+                cols="30" rows="5">{{$data->descryption ?? old('descryption')}}</textarea>
+            @if ($errors->has('descryption'))
+            <span id="email-error" class="error text-danger">{{ $errors->first('descryption') }}</span>
             @endif
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-3">
+        <label>{{ __('CFOP') }}</label>
+        <div class="form-group{{ $errors->has('descryption') ? ' has-danger' : '' }}">
+            {!! Form::select('cfop', ['5102'=>'5102', '5915'=>'5915'], $data->cfop ?? old('cfop'),
+            ['class'=>'form-control']) !!}
+            @if ($errors->has('cfop'))
+            <span id="email-error" class="error text-danger">{{ $errors->first('cfop') }}</span>
+            @endif
+        </div>
+    </div>
+    <div class="col-md-3">
+        <label>{{ __('NCM') }}</label>
+        <div class="form-group{{ $errors->has('ncm') ? ' has-danger' : '' }}">
+            <input class="form-control{{ $errors->has('ncm') ? ' has-danger' : '' }}" name="ncm" type="text"
+                value="{{$data->ncm ?? old('ncm')}}" required />
+            @if ($errors->has('ncm'))
+            <span id="email-error" class="error text-danger">{{ $errors->first('ncm') }}</span>
+            @endif
+        </div>
+    </div>
+    <div class="col-md-3">
         <label>{{ __('Unid. Medida') }}</label>
         <div class="form-group{{ $errors->has('uni_medida') ? ' has-danger' : '' }}">
             {!! Form::select('uni_medida', [
@@ -34,7 +56,7 @@
             @endif
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <label>{{ __('Valor') }}</label>
         <div class="form-group{{ $errors->has('valor') ? ' has-danger' : '' }}">
             <input class="form-control money2{{ $errors->has('valor') ? ' has-danger' : '' }}" name="valor" type="text"

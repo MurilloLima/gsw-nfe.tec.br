@@ -46,9 +46,10 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Produto</th>
-                                            <th>Qtd</th>
-                                            <th>Valor</th>
+                                            <th>NCM</th>
+                                            <th>CFOP</th>
                                             <th>Unid. Medida</th>
+                                            <th>Valor</th>
                                             <th>#</th>
                                         </tr>
                                     </thead>
@@ -57,9 +58,10 @@
                                         <tr>
                                             <td><a href="">{{$item->id}}</a></td>
                                             <td>{{$item->name}}</td>
-                                            <td>{{$item->qtd}}</td>
-                                            <td>{{number_format($item->valor, 2, ',','.')}}</td>
+                                            <td>{{$item->ncm}}</td>
+                                            <td>{{$item->cfop}}</td>
                                             <td>{{$item->uni_medida}}</td>
+                                            <td>{{number_format($item->valor, 2, ',','.')}}</td>
                                             <td>
                                                 <a href="{{ route('admin.product.edit', ['id'=>$item->id]) }}"
                                                     class="btn btn-xs btn-default" title="Editar">

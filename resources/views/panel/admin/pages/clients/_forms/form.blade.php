@@ -9,10 +9,9 @@
             @endif
         </div>
     </div>
-
 </div>
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-4">
         <label>{{ __('CPF') }}</label>
         <div class="form-group{{ $errors->has('cpf') ? ' has-danger' : '' }}">
             <input class="form-control cpf{{ $errors->has('qtd') ? ' has-danger' : '' }}" name="cpf" type="text"
@@ -22,7 +21,7 @@
             @endif
         </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-4">
         <label>{{ __('CNPJ') }}</label>
         <div class="form-group{{ $errors->has('cnpj') ? ' has-danger' : '' }}">
             <input class="form-control cnpj{{ $errors->has('cnpj') ? ' has-danger' : '' }}" name="cnpj" type="text"
@@ -32,9 +31,19 @@
             @endif
         </div>
     </div>
+    <div class="col-md-4">
+        <label>{{ __('Telefone') }}</label>
+        <div class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
+            <input class="form-control phone_with_ddd {{ $errors->has('phone') ? ' has-danger' : '' }}" name="phone"
+                type="text" value="{{$data->phone ?? old('phone')}}" />
+            @if ($errors->has('phone'))
+            <span id="complemento-error" class="error text-danger">{{ $errors->first('phone') }}</span>
+            @endif
+        </div>
+    </div>
 </div>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
         <label>{{ __('Endereço') }}</label>
         <div class="form-group{{ $errors->has('andress') ? ' has-danger' : '' }}">
             <input class="form-control{{ $errors->has('andress') ? ' has-danger' : '' }}" name="andress" type="text"
@@ -45,12 +54,22 @@
         </div>
     </div>
     <div class="col-md-4">
-        <label>{{ __('Complemento') }}</label>
-        <div class="form-group{{ $errors->has('complemento') ? ' has-danger' : '' }}">
-            <input class="form-control{{ $errors->has('complemento') ? ' has-danger' : '' }}" name="complemento"
-                type="text" value="{{$data->complemento ?? old('complemento')}}" />
-            @if ($errors->has('complemento'))
-            <span id="complemento-error" class="error text-danger">{{ $errors->first('complemento') }}</span>
+        <label>{{ __('Bairro') }}</label>
+        <div class="form-group{{ $errors->has('bairro') ? ' has-danger' : '' }}">
+            <input class="form-control{{ $errors->has('bairro') ? ' has-danger' : '' }}" name="bairro"
+                type="text" value="{{$data->bairro ?? old('bairro')}}" />
+            @if ($errors->has('bairro'))
+            <span id="complemento-error" class="error text-danger">{{ $errors->first('bairro') }}</span>
+            @endif
+        </div>
+    </div>
+    <div class="col-md-2">
+        <label>{{ __('CEP') }}</label>
+        <div class="form-group{{ $errors->has('cep') ? ' has-danger' : '' }}">
+            <input class="form-control cep {{ $errors->has('cep') ? ' has-danger' : '' }}" name="cep"
+                type="text" value="{{$data->cep ?? old('cep')}}" />
+            @if ($errors->has('cep'))
+            <span id="complemento-error" class="error text-danger">{{ $errors->first('cep') }}</span>
             @endif
         </div>
     </div>

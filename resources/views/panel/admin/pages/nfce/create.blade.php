@@ -1,5 +1,5 @@
 @extends('panel.admin.layouts.app', ['activePage' => 'admin.nfce'])
-@section('title', 'Emitir NFc-e')
+@section('title', 'Emitir NF-e')
 @section('content')
 <div class="content-wrapper" style="min-height: 255px;">
     <!-- Content Header (Page header) -->
@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Emitir NFc-e</li>
+                        <li class="breadcrumb-item active">Emitir NF-e</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,14 +29,14 @@
                     <div class="card card-primary">
                         <div class="card-header border-0">
                             <div class="d-flex justify-content-between">
-                                <h3 class="card-title">Emitir NFc-e</h3>
+                                <h3 class="card-title">Emitir NF-e</h3>
                             </div>
                         </div>
                         <div class="card-body">
                             @include('panel.admin.pages.nfce._form.form')
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Emitir</button>
+                            <button type="submit" class="btn btn-lg btn-primary">Emitir NF-e</button>
                         </div>
                     </div>
                 </div>

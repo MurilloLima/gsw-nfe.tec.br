@@ -28,6 +28,9 @@ class ClientRequest extends FormRequest
             'andress' => 'required',
             'cidade' => 'required',
             'uf' => 'required',
+            'phone'=> 'required',
+            'bairro'=> 'required',
+            'cep'=> 'required',
         ];
     }
     public function messages()
@@ -35,6 +38,7 @@ class ClientRequest extends FormRequest
         return [
             'name.required' => 'Informe o nome do cliente.',
             'andress.required' => 'Informe o endereço.',
+            'phone.required'=> 'Informe o telefone para contato.',
         ];
         # code...
     }

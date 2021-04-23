@@ -10,6 +10,14 @@ class Product extends Model
         'name',
         'qtd',
         'uni_medida',
-        'valor'
+        'valor',
+        'descryption',
+        'cfop',
+        'ncm',
     ];
+
+    public function items()
+    {
+        return $this->hasMany(Item::class, 'product_id');
+    }
 }

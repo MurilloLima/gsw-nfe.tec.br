@@ -1,4 +1,8 @@
 <?php
+
+Route::get('/', function () {
+    return redirect('/login');
+});
 Route::group(['prefix' => 'panel', 'middleware' => ['auth']], function () {
 
     Route::get('/', 'Panel\HomeController@index')->name('admin.index');
@@ -23,9 +27,17 @@ Route::group(['prefix' => 'panel', 'middleware' => ['auth']], function () {
     Route::get('nfce/', 'Panel\NfceController@index')->name('admin.nfce');
     Route::get('nfce/create/', 'Panel\NfceController@create')->name('admin.nfce.create');
 
+    //tools
     Route::get('tools/', 'Panel\ToolsController@index')->name('admin.tools');
     Route::post('tools/', 'Panel\ToolsController@update')->name('admin.tools.update');
-});
 
+    //select client
+    Route::post('select-client/', 'Panel\NfceController@selectClient')->name('admin.select.client');
+   
+    //select produto
+    Route::post('select-product/', 'Panel\NfceController@selectProduct')->name('admin.select.product');
+    Route::get('item/remove/{id}', 'Panel\NfceController@delete')->name('admin.select.delete');
+
+});
 
 Auth::routes();

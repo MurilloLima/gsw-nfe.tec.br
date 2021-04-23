@@ -19,6 +19,9 @@ class CreateClientsTable extends Migration
             $table->string('cpf')->nullable();
             $table->string('cnpj')->nullable();
             $table->string('andress');
+            $table->string('phone');
+            $table->string('bairro');
+            $table->string('cep');
             $table->string('complemento')->nullable();
             $table->string('cidade');
             $table->string('uf');

@@ -25,7 +25,6 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'qtd' => 'required',
             'uni_medida' => 'required',
             'valor' => 'required'
         ];
@@ -35,7 +34,6 @@ class ProductRequest extends FormRequest
     {
        return [
         'name.required' => 'Informe o nome do produto',
-        'qtd.required' => 'Informe a quantidade',
         'uni_medida.required' => 'Informe qual a unidade medida'
        ];
     }
