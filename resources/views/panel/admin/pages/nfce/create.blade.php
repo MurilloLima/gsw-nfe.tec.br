@@ -36,7 +36,8 @@
                             @include('panel.admin.pages.nfce._form.form')
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-lg btn-primary">Emitir NF-e</button>
+                            <button type="button" data-toggle="modal" data-target="#nfe"
+                                class="btn btn-lg btn-primary">Emitir NF-e</button>
                         </div>
                     </div>
                 </div>
@@ -44,5 +45,43 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+</div>
+
+{{-- modal --}}
+<div class="modal fade" id="nfe" tabindex="-1" role="dialog" aria-labelledby="nfe" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Escolha o tipo da Nf-e (CFOP)
+                </h5>
+            </div>
+            <div class="modal-body">
+                <form action="" class="navbar-form" method="post">
+                    @csrf
+                    @method('post')
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label>{{ __('Selecione') }}</label>
+                                <div class="form-group">
+                                    {!! Form::select('cfop', [
+                                    '5915' => '5915',
+                                    '6915' => '6915',
+                                    '5102' => '5102'
+                                    ], old('cfop'), ['class'=>'form-control']) !!}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-info">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

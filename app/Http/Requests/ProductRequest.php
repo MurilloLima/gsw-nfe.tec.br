@@ -25,6 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'cod' => 'required|unique:products',
             'uni_medida' => 'required',
             'valor' => 'required'
         ];
@@ -32,9 +33,11 @@ class ProductRequest extends FormRequest
 
     public function messages()
     {
-       return [
-        'name.required' => 'Informe o nome do produto',
-        'uni_medida.required' => 'Informe qual a unidade medida'
-       ];
+        return [
+            'name.required' => 'Informe o nome do produto',
+            'cod.required' => 'Informe o código do produto.',
+            'cod.unique' => 'Produto já cadastrado com este código, escolha outro.',
+            'uni_medida.required' => 'Informe qual a unidade medida'
+        ];
     }
 }

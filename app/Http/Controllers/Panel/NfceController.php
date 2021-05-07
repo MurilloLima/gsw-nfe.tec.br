@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Panel;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ItemRequest;
 use App\Models\Client;
-use App\Models\Empresa;
 use App\Models\Item;
 use App\Models\Product;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
+use NFe_io;
 
 class NfceController extends Controller
 {
@@ -37,7 +38,7 @@ class NfceController extends Controller
         return redirect()->back()->with('success', 'Cliente selecionado!');
     }
 
-    public function selectProduct(Request $request, Item $item)
+    public function selectProduct(ItemRequest $request, Item $item)
     {
         $product = Product::find($request->get('product_id'));
         if (Cache::has('client_id')) {
@@ -45,11 +46,11 @@ class NfceController extends Controller
                 'client_id' => Cache::get('client_id'),
                 'product_id' => $product->id,
                 'name' => $product->name,
-                'cfop' => $product->cfop,
                 'ncm' => $product->ncm,
                 'uni_medida' => $product->uni_medida,
                 'valor' => $product->valor,
-                'qtd' => $request->get('qtd')
+                'qtd' => $request->get('qtd'),
+                'descryption' => $request->get('descryption'),
             ]);
         } else {
             return redirect()->back()->with('error', 'Escolha um cliente!');
@@ -63,5 +64,11 @@ class NfceController extends Controller
         return redirect()->back()->with('success', 'Item removido!');
 
         # code...
+    }
+
+    public function emitir()
+    {
+        NFe_io::setApiKey('c73d49f9649046eeba36dcf69f6334fd');
+       
     }
 }

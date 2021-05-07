@@ -23,6 +23,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
                     @include('panel.admin.includes.alerts')
@@ -40,49 +41,45 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Produto</th>
-                                            <th>NCM</th>
-                                            <th>CFOP</th>
-                                            <th>Unid. Medida</th>
-                                            <th>Valor</th>
-                                            <th>#</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @forelse ($data as $item)
-                                        <tr>
-                                            <td><a href="">{{$item->id}}</a></td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->ncm}}</td>
-                                            <td>{{$item->cfop}}</td>
-                                            <td>{{$item->uni_medida}}</td>
-                                            <td>{{number_format($item->valor, 2, ',','.')}}</td>
-                                            <td>
-                                                <a href="{{ route('admin.product.edit', ['id'=>$item->id]) }}"
-                                                    class="btn btn-xs btn-default" title="Editar">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <a href="{{ route('admin.product.delete', ['id'=>$item->id]) }}"
-                                                    class="btn btn-xs btn-default" title="Deletar">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="7" class="text-center">Nenhum encontrado no momento!</td>
-                                        </tr>
-                                        @endforelse
-                                    </tbody>
-                                </table>
-                                <div class="d-flex flex-row justify-content-end">
-                                    {{ $data->links() }}
-                                </div>
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Produto</th>
+                                        <th>NCM</th>
+                                        <th>Unid. Medida</th>
+                                        <th>Valor</th>
+                                        <th>#</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($data as $item)
+                                    <tr>
+                                        <td><a href="">{{$item->cod}}</a></td>
+                                        <td>{{$item->name}}</td>
+                                        <td>{{$item->ncm}}</td>
+                                        <td>{{$item->uni_medida}}</td>
+                                        <td>{{number_format($item->valor, 2, ',','.')}}</td>
+                                        <td>
+                                            <a href="{{ route('admin.product.edit', ['id'=>$item->id]) }}"
+                                                class="btn btn-xs btn-default" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="{{ route('admin.product.delete', ['id'=>$item->id]) }}"
+                                                class="btn btn-xs btn-default" title="Deletar">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                    <tr>
+                                        <td colspan="7" class="text-center">Nenhum encontrado no momento!</td>
+                                    </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                            <div class="d-flex flex-row justify-content-end">
+                                {{ $data->links() }}
                             </div>
                         </div>
                     </div>

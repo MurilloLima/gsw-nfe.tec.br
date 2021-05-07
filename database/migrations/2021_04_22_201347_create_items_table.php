@@ -18,11 +18,11 @@ class CreateItemsTable extends Migration
             $table->integer('client_id');
             $table->integer('product_id');
             $table->string('name');
-            $table->string('cfop');
             $table->string('ncm');
             $table->string('uni_medida');
             $table->string('valor');
             $table->integer('qtd');
+            $table->text('descryption')->nullable();
             $table->timestamps();
         });
     }

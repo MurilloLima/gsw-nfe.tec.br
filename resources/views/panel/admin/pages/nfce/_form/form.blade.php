@@ -118,8 +118,7 @@
                 <tr>
                     <th>Produto</th>
                     <th>NCM</th>
-                    <th>CFOP</th>
-                    <th>Unidade medida</th>
+                    <th class="text-center">Unid. medida</th>
                     <th>Qtd</th>
                     <th>Valor</th>
                     <th></th>
@@ -130,12 +129,12 @@
                 <tr>
                     <td>{{$item->name}}</td>
                     <td>{{$item->ncm}}</td>
-                    <td>{{$item->cfop}}</td>
-                    <td>{{$item->uni_medida}}</td>
+                    <td class="text-center">{{$item->uni_medida}}</td>
                     <td>{{$item->qtd}}</td>
                     <td>{{$item->valor}}</td>
                     <td>
-                        <a href="{{ route('admin.select.delete', ['id'=>$item->id]) }}"><i class="fa fa-trash-alt"></i></a>
+                        <a href="{{ route('admin.select.delete', ['id'=>$item->id]) }}"><i
+                                class="fa fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 @empty
@@ -182,7 +181,6 @@
     </div>
 </div>
 
-
 {{-- modal add produto --}}
 <div class="modal fade" id="product" tabindex="-1" role="dialog" aria-labelledby="product" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -200,13 +198,22 @@
                             <div class="col-md-9">
                                 <label>{{ __('Selecione o produto') }}</label>
                                 <div class="form-group">
-                                    {!! Form::select('product_id', $products, null, ['class'=>'form-control']) !!}
+                                    {!! Form::select('product_id', $products, old('product_id'),
+                                    ['class'=>'form-control']) !!}
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <label>{{ __('Qtd') }}</label>
                                 <div class="form-group">
                                     <input type="number" name="qtd" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>{{ __('Especificações') }}</label>
+                                <div class="form-group">
+                                    <textarea name="descryption" class="form-control" cols="30" rows="6"></textarea>
                                 </div>
                             </div>
                         </div>

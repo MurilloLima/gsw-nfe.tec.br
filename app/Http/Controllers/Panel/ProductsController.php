@@ -17,7 +17,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $data = Product::orderby('created_at', 'desc')->paginate(20);
+        $data = Product::orderby('name', 'asc')->paginate(20);
         return view('panel.admin.pages.products.index', compact('data'));
     }
 
@@ -44,9 +44,9 @@ class ProductsController extends Controller
         $valor = str_replace($source, $replace, $request->get('valor'));
         Product::create([
             'name' => $request->get('name'),
+            'cod' => $request->get('cod'),
             'uni_medida' => $request->get('uni_medida'),
             'valor' => $valor,
-            'cfop' => $request->get('cfop'),
             'ncm' => $request->get('ncm'),
             'descryption' => $request->get('descryption')
         ]);
@@ -83,7 +83,7 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $data = Product::find($id);
         $source = array('.', ',');
@@ -91,9 +91,11 @@ class ProductsController extends Controller
         $valor = str_replace($source, $replace, $request->get('valor'));
         $data->update([
             'name' => $request->get('name'),
-            'qtd' => $request->get('qtd'),
+            'cod' => $request->get('cod'),
             'uni_medida' => $request->get('uni_medida'),
-            'valor' => $valor
+            'valor' => $valor,
+            'ncm' => $request->get('ncm'),
+            'descryption' => $request->get('descryption')
         ]);
         return redirect()->back()->with('success', 'Editado com sucesso.');
     }
@@ -106,6 +108,7 @@ class ProductsController extends Controller
      */
     public function delete($id)
     {
+        Product::destroy($id);
         return redirect()->back()->with('success', 'Deletado com sucesso!');
     }
 }

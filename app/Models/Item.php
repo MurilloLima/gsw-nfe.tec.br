@@ -10,11 +10,11 @@ class Item extends Model
         'client_id',
         'product_id',
         'name',
-        'cfop',
         'ncm',
         'uni_medida',
         'valor',
-        'qtd'
+        'qtd',
+        'descryption'
     ];
 
     public function product()

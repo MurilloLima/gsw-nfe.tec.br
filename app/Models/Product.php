@@ -8,11 +8,11 @@ class Product extends Model
 {
     protected $fillable = [
         'name',
+        'cod',
         'qtd',
         'uni_medida',
         'valor',
         'descryption',
-        'cfop',
         'ncm',
     ];
 
